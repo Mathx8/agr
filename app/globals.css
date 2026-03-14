@@ -28,3 +28,25 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+main {
+  scrollbar-width: thin;
+  scrollbar-color: #facc15 transparent;
+}
+
+main::-webkit-scrollbar {
+  width: 4px;
+}
+
+main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 999px;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+  background: #fde047;
+}

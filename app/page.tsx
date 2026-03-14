@@ -6,17 +6,18 @@ import Servicos from "./components/Servicos";
 import Sobre from "./components/Sobre";
 import Whatsapp from "./components/Whatsapp";
 
-
 export default function Home() {
   return (
-    <main className="bg-gray-50">
+    <>
       <Navbar />
-      <Hero />
-      <Servicos />
-      <Sobre />
-      <Projetos />
       <Whatsapp />
-      <Footer />
-    </main>
+      <main className="h-screen overflow-y-scroll snap-y scroll-smooth">
+        <Hero />
+        <Servicos />
+        <Sobre />
+        <Projetos />
+        <Footer />
+      </main>
+    </>
   )
 }
