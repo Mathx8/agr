@@ -44,6 +44,42 @@ const projetos: Projeto[] = [
             "/Gênesis Residencial.jpeg",
             "/Gênesis Residencial 2.jpeg"
         ]
+    },
+    {
+        titulo: "Sistema Hidráulico de Piscina",
+        desc: "Instalação das redes de retorno, aspiração e ralo de fundo.",
+        tipo: "Hidráulica",
+        imagens: ["/hidraulica1.jpeg", "/hidraulica1_pronta.jpeg"]
+},
+{
+        titulo: "Sistema Hidráulico Predial",
+        desc: "Instalação de pontos hidráulicos, prumadas e sistema de individualização.",
+        tipo: "Hidráulica",
+        imagens: ["/hidraulica2.jpeg"]
+},
+{
+        titulo: "Instalação de metais",
+        desc: "Instalação de metais, incluindo torneiras, registros e acessórios hidráulicos.",
+        tipo: "Hidráulica",
+        imagens: ["/hidraulica3.jpeg"]
+},
+{
+        titulo: "Redes Hidráulicas em Subsolo",
+        desc: "Redes no subsolo: água pluvial, esgoto, gordura, água quente e fria.",
+        tipo: "Hidráulica",
+        imagens: ["/hidraulica4.jpeg"]
+},
+{
+        titulo: "Caixa de Incêndio",
+        desc: "Instalação de caixa de incêndio e tubulação em ferro.",
+        tipo: "Hidráulica",
+        imagens: ["/hidraulica5.jpeg"]
+},
+{
+        titulo: "Montagem de Bomba",
+        desc: "Montagem de bomba de recalque",
+        tipo: "Hidráulica",
+        imagens: ["/hidraulica6.jpeg"]
     }
 ]
 
@@ -254,8 +290,7 @@ export default function Projetos() {
     const [selectedProjeto, setSelectedProjeto] = useState<Projeto | null>(null)
     const [filter, setFilter] = useState<TipoProjeto>("Prédios")
 
-    const filteredProjetos =
-        filter === "Prédios" ? projetos : projetos.filter((p) => p.tipo === filter)
+    const filteredProjetos = projetos.filter((p) => p.tipo === filter)
 
     return (
         <section
