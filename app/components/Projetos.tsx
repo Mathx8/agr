@@ -289,8 +289,27 @@ function ProjetoModal({
 export default function Projetos() {
     const [selectedProjeto, setSelectedProjeto] = useState<Projeto | null>(null)
     const [filter, setFilter] = useState<TipoProjeto>("Prédios")
+    const [showAll, setShowAll] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768)
+        }
+
+        handleResize()
+        window.addEventListener("resize", handleResize)
+
+        return () => window.removeEventListener("resize", handleResize)
+    }, [])
+    
 
     const filteredProjetos = projetos.filter((p) => p.tipo === filter)
+
+    const projetosExibidos =
+        isMobile && !showAll
+            ? filteredProjetos.slice(0, 2)
+            : filteredProjetos
 
     return (
         <section
@@ -314,6 +333,9 @@ export default function Projetos() {
                     <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b3c5d] tracking-tight">
                         Nossas Obras
                     </h2>
+                    <p className="text-gray-500 mt-3 mb-6 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+                        Confira alguns dos nossos serviços realizados com qualidade e eficiência.
+                    </p>
                     <div className="flex items-center justify-center gap-3 mt-4">
                         <div className="h-px w-16 bg-[#0b3c5d]/20" />
                         <div className="w-2 h-2 rounded-full bg-yellow-400" />
@@ -352,7 +374,7 @@ export default function Projetos() {
                         className="grid md:grid-cols-3 gap-7"
                     >
                         {filteredProjetos.length > 0 ? (
-                            filteredProjetos.map((projeto, i) => (
+                            projetosExibidos.map((projeto, i) => (
                                 <ProjetoCard
                                     key={projeto.titulo}
                                     projeto={projeto}
@@ -367,8 +389,26 @@ export default function Projetos() {
                         )}
                     </motion.div>
                 </AnimatePresence>
-
-            </div>
+                    {isMobile && filteredProjetos.length > 2 && (
+                        <div className="flex justify-center mt-6">
+                            {!showAll ? (
+                                <button
+                                    onClick={() => setShowAll(true)}
+                                    className="px-6 py-2 bg-[#0b3c5d] text-white rounded-full font-semibold"
+                                >
+                                    Ver mais
+                                </button>
+                            ) : (
+                                <button
+                                    onClick={() => setShowAll(false)}
+                                    className="px-6 py-2 bg-gray-400 text-white rounded-full font-semibold"
+                                >
+                                    Ver menos
+                                </button>
+                            )}
+                        </div>
+                    )}
+                </div>
 
             {selectedProjeto && (
                 <ProjetoModal
