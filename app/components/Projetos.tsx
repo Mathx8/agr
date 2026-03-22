@@ -213,7 +213,7 @@ function ProjetoModal({
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     onClick={(e) => e.stopPropagation()}
                 >
-                    <div className="relative overflow-hidden bg-[#061e2e]" style={{ height: "420px" }}>
+                    <div className="relative overflow-hidden bg-[#061e2e] h-[260px] sm:h-[320px] md:h-[420px]">
                         <AnimatePresence mode="wait">
                             <motion.img
                                 key={index}
@@ -289,27 +289,13 @@ function ProjetoModal({
 export default function Projetos() {
     const [selectedProjeto, setSelectedProjeto] = useState<Projeto | null>(null)
     const [filter, setFilter] = useState<TipoProjeto>("Prédios")
-    const [showAll, setShowAll] = useState(false)
-    const [isMobile, setIsMobile] = useState(false)
+    const [visibleCount, setVisibleCount] = useState(2)
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768)
-        }
-
-        handleResize()
-        window.addEventListener("resize", handleResize)
-
-        return () => window.removeEventListener("resize", handleResize)
-    }, [])
+        setVisibleCount(2)
+    }, [filter])
     
-
     const filteredProjetos = projetos.filter((p) => p.tipo === filter)
-
-    const projetosExibidos =
-        isMobile && !showAll
-            ? filteredProjetos.slice(0, 2)
-            : filteredProjetos
 
     return (
         <section
@@ -371,44 +357,62 @@ export default function Projetos() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="grid md:grid-cols-3 gap-7"
                     >
-                        {filteredProjetos.length > 0 ? (
-                            projetosExibidos.map((projeto, i) => (
-                                <ProjetoCard
-                                    key={projeto.titulo}
-                                    projeto={projeto}
-                                    index={i}
-                                    onClick={() => setSelectedProjeto(projeto)}
-                                />
-                            ))
-                        ) : (
-                            <div className="col-span-3 text-center py-20 text-gray-400">
-                                Nenhum projeto encontrado nessa categoria.
-                            </div>
-                        )}
-                    </motion.div>
-                </AnimatePresence>
-                    {isMobile && filteredProjetos.length > 2 && (
-                        <div className="flex justify-center mt-6">
-                            {!showAll ? (
-                                <button
-                                    onClick={() => setShowAll(true)}
-                                    className="px-6 py-2 bg-[#0b3c5d] text-white rounded-full font-semibold"
-                                >
-                                    Ver mais
-                                </button>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
+                            {filteredProjetos.length > 0 ? (
+                                filteredProjetos.map((projeto, i) => {
+                                    const isHiddenMobile = i >= visibleCount
+
+                                    return (
+                                        <div
+                                            key={projeto.titulo}
+                                            className={isHiddenMobile ? "hidden md:block" : ""}
+                                        >
+                                            <ProjetoCard
+                                                projeto={projeto}
+                                                index={i}
+                                                onClick={() => setSelectedProjeto(projeto)}
+                                            />
+                                        </div>
+                                    )
+                                })
                             ) : (
-                                <button
-                                    onClick={() => setShowAll(false)}
-                                    className="px-6 py-2 bg-gray-400 text-white rounded-full font-semibold"
-                                >
-                                    Ver menos
-                                </button>
+                                <div className="col-span-3 text-center py-20 text-gray-400">
+                                    Nenhum projeto encontrado nessa categoria.
+                                </div>
                             )}
                         </div>
-                    )}
-                </div>
+                    </motion.div>
+                </AnimatePresence>
+
+                {filteredProjetos.length > 2 && (
+                    <div className="flex justify-center mt-6 md:hidden gap-3">
+                        
+                        {visibleCount < filteredProjetos.length && (
+                            <button
+                                onClick={() => 
+                                    setVisibleCount((prev) => 
+                                        Math.min(filteredProjetos.length, prev + 2)
+                                    )
+                                }
+                                className="px-6 py-2 bg-[#0b3c5d] text-white rounded-full font-semibold"
+                            >
+                                Ver mais
+                            </button>
+                        )}
+
+                        {visibleCount > 2 && (
+                            <button
+                                onClick={() => setVisibleCount((prev) => Math.max(2, prev - 2))}
+                                className="px-6 py-2 bg-gray-400 text-white rounded-full font-semibold"
+                            >
+                                Ver menos
+                            </button>
+                        )}
+
+                    </div>
+                )}
+            </div> {}
 
             {selectedProjeto && (
                 <ProjetoModal
