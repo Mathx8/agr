@@ -4,6 +4,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useCallback, useEffect, useState } from "react"
 import { MdOutlineZoomIn, MdClose, MdChevronLeft, MdChevronRight } from "react-icons/md"
+import { scrollTo } from "@/app/hooks/scrollTo"
 
 type TipoProjeto = "Prédios" | "Elétrica" | "Hidráulica" | "Gás"
 
@@ -187,7 +188,7 @@ const projetos: Projeto[] = [
         desc: "Instalação de tubulações e central de gás em edifícios.",
         tipo: "Gás",
         midia: [
-                {tipo: "imagem", src: "/gas4.jpeg"}, {tipo: "imagem", src: "/gas5.jpeg"}, {tipo: "imagem", src: "/gas6.jpeg"}, {tipo: "imagem", src: "/gas7.jpeg"}, {tipo: "imagem", src: "/gas8.jpeg"}
+            { tipo: "imagem", src: "/gas4.jpeg" }, { tipo: "imagem", src: "/gas5.jpeg" }, { tipo: "imagem", src: "/gas6.jpeg" }, { tipo: "imagem", src: "/gas7.jpeg" }, { tipo: "imagem", src: "/gas8.jpeg" }
         ]
     },
     {
@@ -195,10 +196,10 @@ const projetos: Projeto[] = [
         desc: "Instalação de tubulações e central de gás em edifícios.",
         tipo: "Gás",
         midia: [
-                {tipo: "imagem", src: "/gas20.jpeg"}, {tipo: "imagem", src: "/gas19.jpeg"}, {tipo: "imagem", src: "/gas18.jpeg"}, {tipo: "imagem", src: "/gas17.jpeg"}, {tipo: "imagem", src: "/gas16.jpeg"}, {tipo: "imagem", src: "/gas15.jpeg"}, {tipo: "imagem", src: "/gas14.jpeg"}, {tipo: "imagem", src: "/gas13.jpeg"}, {tipo: "imagem", src: "/gas12.jpeg"}, {tipo: "imagem", src: "/gas11.jpeg"}, {tipo: "imagem", src: "/gas10.jpeg"}, {tipo: "imagem", src: "/gas9.jpeg"}
+            { tipo: "imagem", src: "/gas20.jpeg" }, { tipo: "imagem", src: "/gas19.jpeg" }, { tipo: "imagem", src: "/gas18.jpeg" }, { tipo: "imagem", src: "/gas17.jpeg" }, { tipo: "imagem", src: "/gas16.jpeg" }, { tipo: "imagem", src: "/gas15.jpeg" }, { tipo: "imagem", src: "/gas14.jpeg" }, { tipo: "imagem", src: "/gas13.jpeg" }, { tipo: "imagem", src: "/gas12.jpeg" }, { tipo: "imagem", src: "/gas11.jpeg" }, { tipo: "imagem", src: "/gas10.jpeg" }, { tipo: "imagem", src: "/gas9.jpeg" }
         ]
     },
-    
+
 
 ]
 
@@ -234,16 +235,15 @@ function ProjetoCard({
             style={{ transform: "translateY(0)" }}
             whileHover={{ y: -6 }}
         >
-            <div className="relative h-60 overflow-hidden">
+            <div className="relative h-80 overflow-hidden">
                 {projeto.midia.map((item, i) => (
                     item.tipo === "imagem" ? (
                         <img
                             key={item.src}
                             src={item.src}
                             alt={projeto.titulo}
-                            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
-                                i === imgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
-                            }`}
+                            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${i === imgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                                }`}
                         />
                     ) : (
                         <video
@@ -253,9 +253,8 @@ function ProjetoCard({
                             muted
                             loop
                             playsInline
-                            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
-                                i === imgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
-                            }`}
+                            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${i === imgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                                }`}
                         />
                     )
                 ))}
@@ -349,33 +348,32 @@ function ProjetoModal({
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     onClick={(e) => e.stopPropagation()}
                 >
-                    <div className="relative overflow-hidden bg-[#061e2e] h-[260px] sm:h-[320px] md:h-[420px]">
-                            <AnimatePresence mode="wait">
-                                {item.tipo === "imagem" ? (
-                                    <motion.img
-                                        key={index}
-                                        src={item.src}
-                                        alt={projeto.titulo}
-                                        className="w-full h-full object-cover"
-                                        initial={{ opacity: 0, scale: 1.04 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0.97 }}
-                                        transition={{ duration: 0.35 }}
-                                    />
-                                ) : (
-                                    <motion.video
-                                        key={index}
-                                        src={item.src}
-                                        autoPlay
-                                        muted
-                                        controls
-                                        loop
-                                        className="w-full h-full object-cover"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    />
-                                )}
+                    <div className="relative overflow-hidden bg-[#061e2e] h-[460px] sm:h-[520px] md:h-[620px]">
+                        <AnimatePresence mode="wait">
+                            {item.tipo === "imagem" ? (
+                                <motion.img
+                                    key={index}
+                                    src={item.src}
+                                    alt={projeto.titulo}
+                                    className="w-full h-full object-cover"
+                                    initial={{ opacity: 0, scale: 1.04 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.97 }}
+                                    transition={{ duration: 0.35 }}
+                                />
+                            ) : (
+                                <motion.video
+                                    key={index}
+                                    src={item.src}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    className="w-full h-full object-cover"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                />
+                            )}
                         </AnimatePresence>
 
                         <button
@@ -442,10 +440,14 @@ export default function Projetos() {
     const [filter, setFilter] = useState<TipoProjeto>("Prédios")
     const [visibleCount, setVisibleCount] = useState(2)
 
-    useEffect(() => {
+    const handleFilterChange = (f: TipoProjeto) => {
+        setFilter(f)
         setVisibleCount(2)
-    }, [filter])
-    
+        setTimeout(() => {
+            scrollTo("projetos")
+        }, 50)
+    }
+
     const filteredProjetos = projetos.filter((p) => p.tipo === filter)
 
     return (
@@ -490,7 +492,7 @@ export default function Projetos() {
                     {filtros.map((f) => (
                         <button
                             key={f}
-                            onClick={() => setFilter(f)}
+                            onClick={() => handleFilterChange(f)}
                             className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-300 cursor-pointer ${filter === f
                                 ? "bg-[#0b3c5d] text-white border-[#0b3c5d] shadow-lg shadow-[#0b3c5d]/20"
                                 : "bg-white text-gray-500 border-gray-200 hover:border-[#0b3c5d]/30 hover:text-[#0b3c5d]"
@@ -501,7 +503,7 @@ export default function Projetos() {
                     ))}
                 </motion.div>
 
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="popLayout">
                     <motion.div
                         key={filter}
                         initial={{ opacity: 0 }}
@@ -538,11 +540,11 @@ export default function Projetos() {
 
                 {filteredProjetos.length > 2 && (
                     <div className="flex justify-center mt-6 md:hidden gap-3">
-                        
+
                         {visibleCount < filteredProjetos.length && (
                             <button
-                                onClick={() => 
-                                    setVisibleCount((prev) => 
+                                onClick={() =>
+                                    setVisibleCount((prev) =>
                                         Math.min(filteredProjetos.length, prev + 2)
                                     )
                                 }
@@ -563,7 +565,7 @@ export default function Projetos() {
 
                     </div>
                 )}
-            </div> {}
+            </div> { }
 
             {selectedProjeto && (
                 <ProjetoModal

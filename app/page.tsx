@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Navbar />
       <Whatsapp />
-      <main className="h-screen overflow-y-scroll snap-y scroll-smooth">
+      <main className="h-screen scroll-smooth">
         <Hero />
         <Servicos />
         <Sobre />
