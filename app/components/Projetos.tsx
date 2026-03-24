@@ -11,7 +11,10 @@ type Projeto = {
     titulo: string
     desc: string
     tipo: "Prédios" | "Elétrica" | "Hidráulica" | "Gás"
-    imagens: string[]
+    midia: {
+        tipo: "imagem" | "video"
+        src: string
+    }[]
 }
 
 const projetos: Projeto[] = [
@@ -19,68 +22,184 @@ const projetos: Projeto[] = [
         titulo: "Residencial Aquarela",
         desc: "Desenvolvimento e execução de toda a infraestrutura elétrica e hidráulica.",
         tipo: "Prédios",
-        imagens: [
-            "/Residencial Aquarela.jpeg",
-            "/Residencial Aquarela 2.jpeg",
-            "/Residencial Aquarela 3.jpeg"
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/Residencial Aquarela.jpeg"
+            },
+            {
+                tipo: "imagem",
+                src: "/Residencial Aquarela 2.jpeg"
+            },
+            {
+                tipo: "imagem",
+                src: "/Residencial Aquarela 3.jpeg"
+            }
         ]
     },
     {
         titulo: "You Conceito",
         desc: "Desenvolvimento e execução de toda a infraestrutura elétrica e hidráulica.",
         tipo: "Prédios",
-        imagens: [
-            "/You Conceito.jpeg",
-            "/You Conceito 2.jpeg",
-            "/You Conceito 3.jpeg",
-            "/You Conceito 4.jpeg"
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/You Conceito.jpeg"
+            },
+            {
+                tipo: "imagem",
+                src: "/You Conceito 2.jpeg"
+            },
+            {
+                tipo: "imagem",
+                src: "/You Conceito 3.jpeg",
+            },
+            {
+                tipo: "imagem",
+                src: "/You Conceito 4.jpeg"
+            }
         ]
     },
     {
         titulo: "Gênesis Residencial",
         desc: "Desenvolvimento e execução de toda a infraestrutura elétrica e hidráulica.",
         tipo: "Prédios",
-        imagens: [
-            "/Gênesis Residencial.jpeg",
-            "/Gênesis Residencial 2.jpeg"
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/Gênesis Residencial.jpeg"
+            },
+            {
+                tipo: "imagem",
+                src: "/Gênesis Residencial 2.jpeg"
+            }
         ]
     },
     {
         titulo: "Sistema Hidráulico de Piscina",
         desc: "Instalação das redes de retorno, aspiração e ralo de fundo.",
         tipo: "Hidráulica",
-        imagens: ["/hidraulica1.jpeg", "/hidraulica1_pronta.jpeg"]
-},
-{
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/hidraulica1.jpeg"
+            },
+            {
+                tipo: "imagem",
+                src: "/hidraulica1_pronta.jpeg"
+            }
+        ]
+    },
+    {
         titulo: "Sistema Hidráulico Predial",
         desc: "Instalação de pontos hidráulicos, prumadas e sistema de individualização.",
         tipo: "Hidráulica",
-        imagens: ["/hidraulica2.jpeg"]
-},
-{
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/hidraulica2.jpeg"
+            }
+        ]
+    },
+    {
         titulo: "Instalação de metais",
         desc: "Instalação de metais, incluindo torneiras, registros e acessórios hidráulicos.",
         tipo: "Hidráulica",
-        imagens: ["/hidraulica3.jpeg"]
-},
-{
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/hidraulica3.jpeg"
+            }
+        ]
+    },
+    {
         titulo: "Redes Hidráulicas em Subsolo",
         desc: "Redes no subsolo: água pluvial, esgoto, gordura, água quente e fria.",
         tipo: "Hidráulica",
-        imagens: ["/hidraulica4.jpeg"]
-},
-{
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/hidraulica4.jpeg"
+            }
+        ]
+    },
+    {
         titulo: "Caixa de Incêndio",
         desc: "Instalação de caixa de incêndio e tubulação em ferro.",
         tipo: "Hidráulica",
-        imagens: ["/hidraulica5.jpeg"]
-},
-{
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/hidraulica5.jpeg"
+            }
+        ]
+    },
+    {
         titulo: "Montagem de Bomba",
         desc: "Montagem de bomba de recalque",
         tipo: "Hidráulica",
-        imagens: ["/hidraulica6.jpeg"]
-    }
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/hidraulica6.jpeg"
+            }
+        ]
+    },
+    {
+        titulo: "Sistema de Gás Predial",
+        desc: "Instalação de tubulações e central de gás em edifícios.",
+        tipo: "Gás",
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/gas1.jpeg"
+            },
+            {
+                tipo: "imagem",
+                src: "/gas1 depois.jpeg"
+            }
+        ]
+    },
+    {
+        titulo: "Sistema de Gás Predial",
+        desc: "Instalação de tubulações e central de gás em edifícios.",
+        tipo: "Gás",
+        midia: [
+            {
+                tipo: "imagem",
+                src: "/gas2.jpeg"
+            }
+        ]
+    },
+    {
+        titulo: "Sistema de Gás Predial",
+        desc: "Instalação de tubulações e central de gás em edifícios.",
+        tipo: "Gás",
+        midia: [
+            {
+                tipo: "video",
+                src: "/gas3.mp4"
+            }
+        ]
+    },
+    {
+        titulo: "Sistema de Gás Predial",
+        desc: "Instalação de tubulações e central de gás em edifícios.",
+        tipo: "Gás",
+        midia: [
+                {tipo: "imagem", src: "/gas4.jpeg"}, {tipo: "imagem", src: "/gas5.jpeg"}, {tipo: "imagem", src: "/gas6.jpeg"}, {tipo: "imagem", src: "/gas7.jpeg"}, {tipo: "imagem", src: "/gas8.jpeg"}
+        ]
+    },
+    {
+        titulo: "Sistema de Gás Predial",
+        desc: "Instalação de tubulações e central de gás em edifícios.",
+        tipo: "Gás",
+        midia: [
+                {tipo: "imagem", src: "/gas20.jpeg"}, {tipo: "imagem", src: "/gas19.jpeg"}, {tipo: "imagem", src: "/gas18.jpeg"}, {tipo: "imagem", src: "/gas17.jpeg"}, {tipo: "imagem", src: "/gas16.jpeg"}, {tipo: "imagem", src: "/gas15.jpeg"}, {tipo: "imagem", src: "/gas14.jpeg"}, {tipo: "imagem", src: "/gas13.jpeg"}, {tipo: "imagem", src: "/gas12.jpeg"}, {tipo: "imagem", src: "/gas11.jpeg"}, {tipo: "imagem", src: "/gas10.jpeg"}, {tipo: "imagem", src: "/gas9.jpeg"}
+        ]
+    },
+    
+
 ]
 
 const filtros: TipoProjeto[] = ["Prédios", "Elétrica", "Hidráulica", "Gás"]
@@ -97,12 +216,12 @@ function ProjetoCard({
     const [imgIndex, setImgIndex] = useState(0)
 
     useEffect(() => {
-        if (projeto.imagens.length <= 1) return
+        if (projeto.midia.length <= 1) return
         const interval = setInterval(() => {
-            setImgIndex((prev) => (prev + 1) % projeto.imagens.length)
+            setImgIndex((prev) => (prev + 1) % projeto.midia.length)
         }, 3200)
         return () => clearInterval(interval)
-    }, [projeto.imagens.length])
+    }, [projeto.midia.length])
 
     return (
         <motion.div
@@ -116,13 +235,29 @@ function ProjetoCard({
             whileHover={{ y: -6 }}
         >
             <div className="relative h-60 overflow-hidden">
-                {projeto.imagens.map((img, i) => (
-                    <img
-                        key={img}
-                        src={img}
-                        alt={projeto.titulo}
-                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${i === imgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}
-                    />
+                {projeto.midia.map((item, i) => (
+                    item.tipo === "imagem" ? (
+                        <img
+                            key={item.src}
+                            src={item.src}
+                            alt={projeto.titulo}
+                            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
+                                i === imgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                            }`}
+                        />
+                    ) : (
+                        <video
+                            key={item.src}
+                            src={item.src}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
+                                i === imgIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                            }`}
+                        />
+                    )
                 ))}
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061e2e]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
@@ -133,9 +268,9 @@ function ProjetoCard({
                     </div>
                 </div>
 
-                {projeto.imagens.length > 1 && (
+                {projeto.midia.length > 1 && (
                     <div className="absolute bottom-3 right-3 flex gap-1">
-                        {projeto.imagens.map((_, i) => (
+                        {projeto.midia.map((_, i) => (
                             <div
                                 key={i}
                                 className={`h-1 rounded-full transition-all duration-500 ${i === imgIndex ? "w-4 bg-white" : "w-1 bg-white/40"}`}
@@ -178,13 +313,14 @@ function ProjetoModal({
 }) {
     const [index, setIndex] = useState(0)
 
+    const item = projeto.midia[index] || projeto.midia[0]
     const next = useCallback(() => {
-        setIndex((prev) => (prev + 1) % projeto.imagens.length)
-    }, [projeto.imagens.length])
+        setIndex((prev) => (prev + 1) % projeto.midia.length)
+    }, [projeto.midia.length])
 
     const prev = useCallback(() => {
-        setIndex((prev) => prev === 0 ? projeto.imagens.length - 1 : prev - 1)
-    }, [projeto.imagens.length])
+        setIndex((prev) => prev === 0 ? projeto.midia.length - 1 : prev - 1)
+    }, [projeto.midia.length])
 
     useEffect(() => {
         const handler = (e: KeyboardEvent) => {
@@ -214,17 +350,32 @@ function ProjetoModal({
                     onClick={(e) => e.stopPropagation()}
                 >
                     <div className="relative overflow-hidden bg-[#061e2e] h-[260px] sm:h-[320px] md:h-[420px]">
-                        <AnimatePresence mode="wait">
-                            <motion.img
-                                key={index}
-                                src={projeto.imagens[index]}
-                                alt={projeto.titulo}
-                                className="w-full h-full object-cover"
-                                initial={{ opacity: 0, scale: 1.04 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.97 }}
-                                transition={{ duration: 0.35 }}
-                            />
+                            <AnimatePresence mode="wait">
+                                {item.tipo === "imagem" ? (
+                                    <motion.img
+                                        key={index}
+                                        src={item.src}
+                                        alt={projeto.titulo}
+                                        className="w-full h-full object-cover"
+                                        initial={{ opacity: 0, scale: 1.04 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.97 }}
+                                        transition={{ duration: 0.35 }}
+                                    />
+                                ) : (
+                                    <motion.video
+                                        key={index}
+                                        src={item.src}
+                                        autoPlay
+                                        muted
+                                        controls
+                                        loop
+                                        className="w-full h-full object-cover"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    />
+                                )}
                         </AnimatePresence>
 
                         <button
@@ -234,7 +385,7 @@ function ProjetoModal({
                             <MdClose size={20} />
                         </button>
 
-                        {projeto.imagens.length > 1 && (
+                        {projeto.midia.length > 1 && (
                             <>
                                 <button
                                     onClick={prev}
@@ -251,9 +402,9 @@ function ProjetoModal({
                             </>
                         )}
 
-                        {projeto.imagens.length > 1 && (
+                        {projeto.midia.length > 1 && (
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                                {projeto.imagens.map((_, i) => (
+                                {projeto.midia.map((_, i) => (
                                     <button
                                         key={i}
                                         onClick={() => setIndex(i)}
@@ -277,7 +428,7 @@ function ProjetoModal({
                             </p>
                         </div>
                         <span className="shrink-0 text-sm text-gray-400 mt-1">
-                            {index + 1} / {projeto.imagens.length}
+                            {index + 1} / {projeto.midia.length}
                         </span>
                     </div>
                 </motion.div>
