@@ -133,20 +133,21 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.75, ease: "easeOut" }}
-                    className="mt-20 flex flex-wrap gap-px"
+                    className="mt-12 md:mt-20 flex flex-nowrap gap-px overflow-x-auto md:overflow-visible"
                 >
                     {stats.map(({ value, label }, i) => (
                         <div
                             key={label}
-                            className={`flex flex-col px-8 py-5 bg-white/5 backdrop-blur-sm border border-white/10 
-                                ${i === 0 ? "rounded-l-2xl" : ""} 
-                                ${i === stats.length - 1 ? "rounded-r-2xl" : ""}
-                            `}
+                            className={`flex flex-col items-center justify-center px-4 md:px-8 py-3 md:py-5 
+                bg-white/5 backdrop-blur-sm border border-white/10 min-w-[90px] md:min-w-0
+                ${i === 0 ? "rounded-l-2xl" : ""} 
+                ${i === stats.length - 1 ? "rounded-r-2xl" : ""}
+            `}
                         >
-                            <span className="text-2xl md:text-3xl font-extrabold text-yellow-400 leading-none">
+                            <span className="text-lg md:text-3xl font-extrabold text-yellow-400 leading-none">
                                 {value}
                             </span>
-                            <span className="text-xs text-gray-400 mt-1 whitespace-nowrap">
+                            <span className="text-[10px] md:text-xs text-gray-400 mt-1 text-center">
                                 {label}
                             </span>
                         </div>
