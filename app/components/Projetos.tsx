@@ -199,6 +199,54 @@ const projetos: Projeto[] = [
             { tipo: "imagem", src: "/gas20.jpeg" }, { tipo: "imagem", src: "/gas19.jpeg" }, { tipo: "imagem", src: "/gas18.jpeg" }, { tipo: "imagem", src: "/gas17.jpeg" }, { tipo: "imagem", src: "/gas16.jpeg" }, { tipo: "imagem", src: "/gas15.jpeg" }, { tipo: "imagem", src: "/gas14.jpeg" }, { tipo: "imagem", src: "/gas13.jpeg" }, { tipo: "imagem", src: "/gas12.jpeg" }, { tipo: "imagem", src: "/gas11.jpeg" }, { tipo: "imagem", src: "/gas10.jpeg" }, { tipo: "imagem", src: "/gas9.jpeg" }
         ]
     },
+    {
+        titulo: "Sistema de Eletrica",
+        desc: "Instalação de Sistema eletrico",
+        tipo: "Elétrica",
+        midia: [
+            { tipo: "imagem", src: "/eletrica1.jpeg" }
+        ]
+    },
+    {
+        titulo: "Sistema de Eletrica",
+        desc: "Instalação de Sistema eletrico",
+        tipo: "Elétrica",
+        midia: [
+            { tipo: "imagem", src: "/eletrica2.jpeg" }
+        ]
+    },
+    {
+        titulo: "Sistema de Eletrica",
+        desc: "Instalação de Sistema eletrico",
+        tipo: "Elétrica",
+        midia: [
+            { tipo: "imagem", src: "/eletrica3.jpeg" }
+        ]
+    },
+    {
+        titulo: "Sistema de Eletrica",
+        desc: "Instalação de Sistema eletrico",
+        tipo: "Elétrica",
+        midia: [
+            { tipo: "imagem", src: "/eletrica9.jpeg" }
+        ]
+    },
+    {
+        titulo: "Sistema de Eletrica",
+        desc: "Instalação de Sistema eletrico",
+        tipo: "Elétrica",
+        midia: [
+            { tipo: "imagem", src: "/eletrica7.jpeg" }
+        ]
+    },
+    {
+        titulo: "Sistema de Eletrica",
+        desc: "Instalação de Sistema eletrico",
+        tipo: "Elétrica",
+        midia: [
+            { tipo: "imagem", src: "/eletrica8.jpeg" }
+        ]
+    },
 
 
 ]
