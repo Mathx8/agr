@@ -14,8 +14,8 @@ const badges = [
 ]
 
 const stats = [
-    { value: "+15", label: "anos de experiência" },
-    { value: "+500", label: "projetos realizados" },
+    { value: "+26", label: "anos de experiência" },
+    { value: "+100", label: "projetos realizados" },
     { value: "100%", label: "dentro das normas" },
 ]
 

@@ -396,7 +396,7 @@ function ProjetoModal({
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     onClick={(e) => e.stopPropagation()}
                 >
-                    <div className="relative overflow-hidden bg-[#061e2e] h-[460px] sm:h-[520px] md:h-[620px]">
+                    <div className="relative overflow-hidden bg-[#061e2e] h-[75vh]">
                         <AnimatePresence mode="wait">
                             {item.tipo === "imagem" ? (
                                 <motion.img

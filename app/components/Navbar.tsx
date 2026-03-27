@@ -179,14 +179,14 @@ export default function Navbar() {
             animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }}
             exit={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 bg-[#061e2e] flex flex-col"
+            className="fixed inset-0 z-40 bg-[#061e2e] flex flex-col h-[100dvh]"
           >
             <div className="absolute inset-0 opacity-[0.03]" style={{
               backgroundImage: `repeating-linear-gradient(-45deg, #facc15 0px, #facc15 1px, transparent 1px, transparent 48px)`
             }} />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-yellow-400/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="relative flex flex-col items-center justify-center flex-1 gap-2 px-8">
+            <div className="relative flex flex-col items-center justify-start flex-1 gap-2 px-8 pt-24 pb-10 overflow-y-auto">
 
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
@@ -256,14 +256,40 @@ export default function Navbar() {
             </div>
 
             {/* Rodapé do menu */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="relative text-center text-gray-600 text-xs pb-8"
+              className="relative flex flex-col items-center sm:items-start gap-1 text-gray-600 text-xs pb-8"
             >
-              © 2026 AGR Instalações
-            </motion.p>
+              <span className="uppercase tracking-widest text-[10px] text-gray-600">
+                Desenvolvido por
+              </span>
+
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.mathx8.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative font-medium text-gray-300 hover:text-yellow-400 transition-colors duration-300 group"
+                >
+                  Matheus
+                  <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-yellow-400 transition-all duration-300 group-hover:w-full" />
+                </a>
+
+                <span className="text-gray-600">•</span>
+
+                <a
+                  href="https://www.linkedin.com/in/samuel-lopes-gomes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative font-medium text-gray-300 hover:text-yellow-400 transition-colors duration-300 group"
+                >
+                  Samuel
+                  <span className="absolute left-0 -bottom-0.5 w-0 h-px bg-yellow-400 transition-all duration-300 group-hover:w-full" />
+                </a>
+              </div>
+            </motion.div>
 
           </motion.div>
         )}

@@ -34,8 +34,8 @@ function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
 }
 
 const stats = [
-    { value: 15, suffix: "+", label: "anos de experiência" },
-    { value: 500, suffix: "+", label: "projetos realizados" },
+    { value: 26, suffix: "+", label: "anos de experiência" },
+    { value: 100, suffix: "+", label: "projetos realizados" },
     { value: 100, suffix: "%", label: "conformidade técnica" },
 ]
 
@@ -73,7 +73,7 @@ export default function Sobre() {
                         <img
                             src="/casal.png"
                             alt="Equipe AGR"
-                            className="relative rounded-3xl shadow-2xl w-full object-cover hover:scale-[1.02] transition duration-700"
+                            className="relative rounded-3xl shadow-2xl w-full h-[75vh] object-cover object-top hover:scale-[1.02] transition duration-700"
                         />
 
                         <motion.div
@@ -83,7 +83,7 @@ export default function Sobre() {
                             transition={{ delay: 0.4, duration: 0.5 }}
                             className="absolute -bottom-5 -right-5 bg-[#0b3c5d] text-white px-5 py-3 rounded-2xl shadow-xl"
                         >
-                            <p className="text-2xl font-extrabold text-yellow-400 leading-none">+15</p>
+                            <p className="text-2xl font-extrabold text-yellow-400 leading-none">+3</p>
                             <p className="text-xs text-gray-300 mt-0.5">anos no mercado</p>
                         </motion.div>
                     </motion.div>
@@ -101,7 +101,6 @@ export default function Sobre() {
 
                         <h2 className="text-4xl md:text-5xl font-extrabold text-[#0b3c5d] tracking-tight leading-tight">
                             Quem somos
-                            <span className="text-yellow-400">.</span>
                         </h2>
 
                         <p className="mt-5 text-gray-600 leading-relaxed">

@@ -169,10 +169,31 @@ export default function Footer() {
                         variants={item}
                         className="max-w-7xl mx-auto px-6 mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/[0.06] pt-8 select-none"
                     >
-                        <p className="text-gray-500 text-xs">
-                            © 2026 AGR Instalações · Todos os direitos reservados
+                        <p className="text-gray-500 text-sm flex items-center gap-2">
+                            <span className="hidden sm:block text-white">|</span>
+
+                            <span>
+                                Desenvolvido por{" "}
+                                <a
+                                    href="https://www.mathx8.com.br/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium"
+                                >
+                                    Matheus
+                                </a>
+                                {" "}e{" "}
+                                <a
+                                    href="https://www.linkedin.com/in/samuel-lopes-gomes/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium"
+                                >
+                                    Samuel
+                                </a>
+                            </span>
                         </p>
-                        <p className="text-gray-600 text-xs">
+                        <p className="text-gray-600 text-sm">
                             São Paulo, SP
                         </p>
 
