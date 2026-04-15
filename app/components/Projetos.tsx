@@ -147,8 +147,8 @@ const projetos: Projeto[] = [
         ]
     },
     {
-        titulo: "Sistema de Gás Predial",
-        desc: "Instalação de tubulações e central de gás em edifícios.",
+        titulo: "Central de Medidores de Gás",
+        desc: "Instalação e organização de medidores individuais para distribuição em edifícios.",
         tipo: "Gás",
         midia: [
             {
@@ -162,8 +162,8 @@ const projetos: Projeto[] = [
         ]
     },
     {
-        titulo: "Sistema de Gás Predial",
-        desc: "Instalação de tubulações e central de gás em edifícios.",
+        titulo: "Abrigo de Medidores de Gás",
+        desc: "Montagem de central de gás com proteção e acesso adequado para manutenção.",
         tipo: "Gás",
         midia: [
             {
@@ -173,8 +173,8 @@ const projetos: Projeto[] = [
         ]
     },
     {
-        titulo: "Sistema de Gás Predial",
-        desc: "Instalação de tubulações e central de gás em edifícios.",
+        titulo: "Ponto de Gás Residencial",
+        desc: "Instalação de tubulação e ponto de gás para uso em equipamentos domésticos.",
         tipo: "Gás",
         midia: [
             {
@@ -184,64 +184,64 @@ const projetos: Projeto[] = [
         ]
     },
     {
-        titulo: "Sistema de Gás Predial",
-        desc: "Instalação de tubulações e central de gás em edifícios.",
+        titulo: "Regulador e Medição de Gás",
+        desc: "Instalação de reguladores de pressão e medidores garantindo segurança no sistema.",
         tipo: "Gás",
         midia: [
             { tipo: "imagem", src: "/gas4.jpeg" }, { tipo: "imagem", src: "/gas5.jpeg" }, { tipo: "imagem", src: "/gas6.jpeg" }, { tipo: "imagem", src: "/gas7.jpeg" }, { tipo: "imagem", src: "/gas8.jpeg" }
         ]
     },
     {
-        titulo: "Sistema de Gás Predial",
-        desc: "Instalação de tubulações e central de gás em edifícios.",
+        titulo: "Distribuição de Tubulação de Gás",
+        desc: "Execução de rede de gás com tubulação organizada e fixação adequada.",
         tipo: "Gás",
         midia: [
             { tipo: "imagem", src: "/gas20.jpeg" }, { tipo: "imagem", src: "/gas19.jpeg" }, { tipo: "imagem", src: "/gas18.jpeg" }, { tipo: "imagem", src: "/gas17.jpeg" }, { tipo: "imagem", src: "/gas16.jpeg" }, { tipo: "imagem", src: "/gas15.jpeg" }, { tipo: "imagem", src: "/gas14.jpeg" }, { tipo: "imagem", src: "/gas13.jpeg" }, { tipo: "imagem", src: "/gas12.jpeg" }, { tipo: "imagem", src: "/gas11.jpeg" }, { tipo: "imagem", src: "/gas10.jpeg" }, { tipo: "imagem", src: "/gas9.jpeg" }
         ]
     },
     {
-        titulo: "Sistema de Eletrica",
-        desc: "Instalação de Sistema eletrico",
+        titulo: "Centro de Medição Elétrica",
+        desc: "Instalação de medidores e organização de alimentação elétrica para múltiplas unidades.",
         tipo: "Elétrica",
         midia: [
             { tipo: "imagem", src: "/eletrica1.jpeg" }
         ]
     },
     {
-        titulo: "Sistema de Eletrica",
-        desc: "Instalação de Sistema eletrico",
+        titulo: "Quadro de Distribuição Elétrica",
+        desc: "Montagem de quadro com disjuntores e organização dos circuitos elétricos.",
         tipo: "Elétrica",
         midia: [
             { tipo: "imagem", src: "/eletrica2.jpeg" }
         ]
     },
     {
-        titulo: "Sistema de Eletrica",
-        desc: "Instalação de Sistema eletrico",
+        titulo: "Painel Elétrico Residencial",
+        desc: "Instalação e distribuição de circuitos com proteção e segurança adequada.",
         tipo: "Elétrica",
         midia: [
             { tipo: "imagem", src: "/eletrica3.jpeg" }
         ]
     },
     {
-        titulo: "Sistema de Eletrica",
-        desc: "Instalação de Sistema eletrico",
+        titulo: "Proteção Elétrica com Disjuntores",
+        desc: "Instalação de disjuntores e dispositivos de proteção contra sobrecarga.",
         tipo: "Elétrica",
         midia: [
             { tipo: "imagem", src: "/eletrica9.jpeg" }
         ]
     },
     {
-        titulo: "Sistema de Eletrica",
-        desc: "Instalação de Sistema eletrico",
+        titulo: "Quadro Elétrico Vertical",
+        desc: "Montagem de quadros elétricos com distribuição organizada em múltiplos níveis.",
         tipo: "Elétrica",
         midia: [
             { tipo: "imagem", src: "/eletrica7.jpeg" }
         ]
     },
     {
-        titulo: "Sistema de Eletrica",
-        desc: "Instalação de Sistema eletrico",
+        titulo: "Distribuição de Circuitos Elétricos",
+        desc: "Organização e identificação de circuitos em quadro de distribuição.",
         tipo: "Elétrica",
         midia: [
             { tipo: "imagem", src: "/eletrica8.jpeg" }
